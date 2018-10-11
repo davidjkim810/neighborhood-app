@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_10_11_161342) do
     t.string "first_name"
     t.string "last_name"
     t.string "nickname"
+    t.string "description"
     t.string "img_url"
     t.string "phone_number"
     t.string "street"
