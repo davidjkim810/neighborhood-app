@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_10_11_161342) do
     t.string "city"
     t.string "state"
     t.integer "zip_code"
+    t.integer "community_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
