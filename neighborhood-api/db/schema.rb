@@ -15,18 +15,13 @@ ActiveRecord::Schema.define(version: 2018_10_11_161342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "people", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
     t.string "first_name"
     t.string "last_name"
     t.string "nickname"
+    t.string "img_url"
     t.string "phone_number"
     t.string "street"
     t.string "city"
