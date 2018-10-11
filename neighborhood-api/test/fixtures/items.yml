@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: MyString
+  borrower_id: MyString
+  img_url: MyString
+  name: MyString
+  description: MyString
+  availability: false
+
+two:
+  user_id: MyString
+  borrower_id: MyString
+  img_url: MyString
+  name: MyString
+  description: MyString
+  availability: false
