@@ -6,6 +6,8 @@ one:
   first_name: MyString
   last_name: MyString
   nickname: MyString
+  description: MyString
+  img_url: MyString
   phone_number: MyString
   street: MyString
   city: MyString
@@ -18,6 +20,8 @@ two:
   first_name: MyString
   last_name: MyString
   nickname: MyString
+  description: MyString
+  img_url: MyString
   phone_number: MyString
   street: MyString
   city: MyString

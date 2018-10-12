@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  lender_id: MyString
-  borrower_id: MyString
-  item_id: MyString
+  user_id: 1
+  item_id: 1
   status: MyString
 
 two:
-  lender_id: MyString
-  borrower_id: MyString
-  item_id: MyString
+  user_id: 1
+  item_id: 1
   status: MyString
