@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :items
-  has_many :user_communities
-  has_many :communities, :through => :user_communities
-  has_many :transactions
+  has_many :user_neighborhoods
+  has_many :neighborhoods, :through => :user_neighborhoods
 end

@@ -7,18 +7,18 @@ DATA = {
     ["johndoe", "abc123", "john", "doe", "johnny", "I love green tea!", nil, "123-321-1234", "123 John Street", "Atlantis", "NY", "07611"],
     ["janedoe", "abc123", "jane", "doe", "janey", "I love black tea!", nil, "321-321-3214", "123 Jane Street", "Atlantis", "NY", "07611"]
   ],
-  :community_keys => [
+  :neighborhood_keys => [
     "organizer_id", "name", "password", "description", "img_url"
   ],
-  :communities => [
-    [nil, "Doe Condominiums", nil, "The Doe community!", nil],
-    [nil, "Atlantis High School PTA", nil, "Community for parents of atlantis high students", nil]
+  :neighborhoods => [
+    [nil, "Doe Condominiums", nil, "The Doe neighborhood!", nil],
+    [nil, "Atlantis High School PTA", nil, "neighborhood for parents of atlantis high students", nil]
   ]
 }
 
 def main
   make_users
-  make_communities
+  make_neighborhoods
 end
 
 def make_users
@@ -31,13 +31,13 @@ def make_users
   end
 end
 
-def make_communities
-  DATA[:communities].each do |community|
-    new_community = Community.new
-    community.each_with_index do |attribute, i|
-      new_community.send(DATA[:community_keys][i]+"=", attribute)
+def make_neighborhoods
+  DATA[:neighborhoods].each do |neighborhood|
+    new_neighborhood = Neighborhood.new
+    neighborhood.each_with_index do |attribute, i|
+      new_neighborhood.send(DATA[:neighborhood_keys][i]+"=", attribute)
     end
-    new_community.save
+    new_neighborhood.save
   end
 end
 
