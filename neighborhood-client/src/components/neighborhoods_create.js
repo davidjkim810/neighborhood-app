@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NeighborhoodForm extends Component {
+class NeighborhoodsCreate extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,4 +52,4 @@ class NeighborhoodForm extends Component {
   }
 }
 
-export default NeighborhoodForm;
+export default NeighborhoodsCreate;

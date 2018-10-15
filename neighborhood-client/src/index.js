@@ -8,7 +8,7 @@ import rootReducer from "./reducers/manageReducers"
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NeighborhoodsIndex from './components/neighborhoods_index';
 import thunk from 'redux-thunk';
-import NeighborhoodForm from './components/neighborhood_form';
+import NeighborhoodsCreate from './components/neighborhoods_create';
 
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
@@ -18,8 +18,8 @@ ReactDOM.render(
   <Provider>
     <Router>
       <div>
-        <NeighborhoodForm />
-        <Route path="/" component={NeighborhoodsIndex}/>
+        <NeighborhoodsCreate />
+        <Route path="/"component={NeighborhoodsIndex}/>
       </div>
     </Router>
   </Provider>,

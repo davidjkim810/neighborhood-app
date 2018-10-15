@@ -1,3 +1,3 @@
-export default function communitiesReducer(state = [], action){
+export default function neighborhoodsReducer(state = [], action){
 
 }
