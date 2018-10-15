@@ -3,10 +3,9 @@ module Api
     class NeighborhoodsController < ApplicationController
 
       def create
-        user = User.find(params[:user_id])
-        neighborhood = Neighborhood.new(organizer_id: user.id, name: params[:name], password: params[:password], description: params[:description], img_url: params[:img_url] )
+        neighborhood = Neighborhood.new(name: params[:name], password: params[:password], description: params[:description], img_url: params[:img_url] )
         if neighborhood.save
-          user.neighborhoods << neighborhood
+
           render json: {status: 'SUCCESS', message:'Saved neighborhood', data: neighborhood}, status: :ok
         else
           render json: {status: 'ERROR', message:'neighborhood not saved', data: neighborhood.errors}, status: :unprocessable_entry

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
       put 'users/:user_id/neighborhoods/:id/leave', :to => 'users#leave'
 
-      resources :neighborhoods, only: [:show, :index] do
+      resources :neighborhoods, only: [:show, :create, :index] do
         resources :items, only: [:index]
         resources :users, only: [:index]
       end
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
       resources :users do
         resources :items, only: [:index]
-        resources :neighborhoods, only: [:index, :update, :create, :destroy]
+        resources :neighborhoods, only: [:index, :update, :destroy]
       end
     end
   end
