@@ -3,19 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer from "./reducers/manageReducers"
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NeighborhoodsIndex from './components/neighborhoods_index';
-import thunk from 'redux-thunk';
 import NeighborhoodsCreate from './components/neighborhoods_create';
-
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
-
+import store from './store';
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <Router>
       <div>
         <NeighborhoodsCreate />

@@ -1,10 +1,9 @@
-import { combineReducers } from "redux";
-import itemsReducer from './manageItem';
+import { combineReducers } from 'redux';
+import neighborhoodReducer from './neighborhoodReducer';
 import usersReducer from './manageUser';
-import communitiesReducer from './manageCommunity';
+import neighborhoodReducer from './manageCommunity';
 
-const rootReducer = combineReducers({
+export default combineReducers({
+  neighborhoods: neighborhoodReducer
 
 })
-
-export default rootReducer;
