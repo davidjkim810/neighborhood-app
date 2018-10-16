@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NeighborhoodsIndex from './components/neighborhoods_index';
 import NeighborhoodsCreate from './components/neighborhoods_create';
 import store from './store';
+import Navbar from './components/layout/Navbar';
+
 
 ReactDOM.render(
   <Provider store={store}>
@@ -14,6 +16,7 @@ ReactDOM.render(
       <div>
         <Route path="/neighborhoods/create" component={NeighborhoodsCreate} />
         <Route path="/"component={NeighborhoodsIndex}/>
+        <Navbar />
       </div>
     </Router>
   </Provider>,
