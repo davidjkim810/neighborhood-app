@@ -15,7 +15,10 @@ import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Security>
+      <Security issuer='https://dev-671514.oktapreview.com/oauth2/default'
+                  client_id='0oagntsfo3xBFh62I0h7'
+                  redirect_uri={window.location.origin + '/implicit/callback'}
+                  onAuthRequired={onAuthRequired} >
       <div>
         <Navbar />
         <div className="container">
