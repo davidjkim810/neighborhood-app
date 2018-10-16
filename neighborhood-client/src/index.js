@@ -12,7 +12,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <NeighborhoodsCreate />
+        <Route path="/neighborhoods/create" component={NeighborhoodsCreate} />
         <Route path="/"component={NeighborhoodsIndex}/>
       </div>
     </Router>

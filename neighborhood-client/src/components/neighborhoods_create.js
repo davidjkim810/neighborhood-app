@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createNeighborhood } from '../actions/postActions';
 
 class NeighborhoodsCreate extends Component {
   constructor(props) {
@@ -8,28 +11,19 @@ class NeighborhoodsCreate extends Component {
       description: ''
     }
   }
-
   handleOnSubmit = event => {
     event.preventDefault();
     const neighborhood = {
       name: this.state.name,
       description: this.state.description
     };
-
-    fetch('http://localhost:3001/api/v1/neighborhoods', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(neighborhood)
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-  }
-
+    this.props.createNeighborhood(neighborhood);
+  };
   handleOnChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
+
+
   render() {
     return (
       <div>
@@ -52,4 +46,8 @@ class NeighborhoodsCreate extends Component {
   }
 }
 
-export default NeighborhoodsCreate;
+NeighborhoodsCreate.propTypes = {
+  createNeighborhood: PropTypes.func.isRequired
+};
+
+export default connect(null, {createNeighborhood})(NeighborhoodsCreate);
