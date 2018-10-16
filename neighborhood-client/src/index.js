@@ -10,7 +10,7 @@ import store from './store';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
-import Login from './auth/Login'
+import Login from './components/auth/Login'
 
 function onAuthRequired({history}){
   history.push('/login');
