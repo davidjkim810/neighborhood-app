@@ -15,6 +15,7 @@ import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+      <Security>
       <div>
         <Navbar />
         <div className="container">
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="/" exact={true} component={Home}/>
         </div>
       </div>
+      </Security>
     </Router>
   </Provider>,
 document.getElementById('root')
