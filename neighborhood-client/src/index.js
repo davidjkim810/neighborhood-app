@@ -8,15 +8,15 @@ import NeighborhoodsIndex from './components/neighborhoods_index';
 import NeighborhoodsCreate from './components/neighborhoods_create';
 import store from './store';
 import Navbar from './components/layout/Navbar';
-
+import Home from './components/pages/Home';
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route path="/neighborhoods/create" component={NeighborhoodsCreate} />
-        <Route path="/"component={NeighborhoodsIndex}/>
         <Navbar />
+        <Route path="/neighborhoods" component={NeighborhoodsIndex} />
+        <Route path="/" exact={true} component={Home}/>
       </div>
     </Router>
   </Provider>,
