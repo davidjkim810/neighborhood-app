@@ -9,6 +9,8 @@ import NeighborhoodsCreate from './components/neighborhoods_create';
 import store from './store';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
+import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+
 
 ReactDOM.render(
   <Provider store={store}>
