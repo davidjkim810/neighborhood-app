@@ -10,7 +10,7 @@ import store from './store';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
-
+import Login from './auth/Login'
 
 function onAuthRequired({history}){
   history.push('/login');
@@ -29,6 +29,8 @@ ReactDOM.render(
         <div className="container">
           <SecureRoute path="/neighborhoods" component={NeighborhoodsIndex} />
           <Route path="/" exact={true} component={Home}/>
+          <Route path='/login' render={() => <Login baseUrl='https://dev-671514.oktapreview.com' />} />
+          <Route path='/implicit/callback' component={ImplicitCallback} />
         </div>
       </div>
       </Security>
