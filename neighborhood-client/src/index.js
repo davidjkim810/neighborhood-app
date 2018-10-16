@@ -15,8 +15,10 @@ ReactDOM.render(
     <Router>
       <div>
         <Navbar />
-        <Route path="/neighborhoods" component={NeighborhoodsIndex} />
-        <Route path="/" exact={true} component={Home}/>
+        <div className="container">
+          <Route path="/neighborhoods" component={NeighborhoodsIndex} />
+          <Route path="/" exact={true} component={Home}/>
+        </div>
       </div>
     </Router>
   </Provider>,
