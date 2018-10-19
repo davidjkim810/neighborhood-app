@@ -31,7 +31,7 @@ module Api
       end
 
       def index
-        if params[:community_id]
+        if params[:neighborhood_id]
           neighborhood = Neighborhood.find(params[:neighborhood_id])
           render json: {status: 'SUCCESS', message:'Loaded all users in neighborhood', data: neighborhood.users}, status: :ok
         else

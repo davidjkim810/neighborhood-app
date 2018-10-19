@@ -1,2 +1,4 @@
 export const FETCH_NEIGHBORHOODS = 'FETCH_NEIGHBORHOODS';
 export const NEW_NEIGHBORHOOD = 'NEW_NEIGHBORHOOD';
+export const NEW_USER = 'NEW_USER';
+export const FETCH_USERS = 'FETCH_USERS';

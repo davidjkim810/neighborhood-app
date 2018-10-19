@@ -1,4 +1,4 @@
-import { FETCH_NEIGHBORHOODS, NEW_NEIGHBORHOOD } from './types';
+import { FETCH_NEIGHBORHOODS, NEW_NEIGHBORHOOD, NEW_USER, FETCH_USERS } from './types';
 
 export const fetchNeighborhoods = () => dispatch => {
     fetch('http://localhost:3001/api/v1/neighborhoods')
@@ -23,3 +23,30 @@ export const createNeighborhood = (neighborhoodData) => dispatch => {
       payload: neighborhood
     }));
   };
+
+
+export const createUser = (userData) => dispatch => {
+  fetch('http://localhost:3001/api/v1/users', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+  })
+    .then(res => res.json())
+    .then(user => dispatch({
+      type: NEW_USER,
+      payload: user
+    }));
+  };
+
+export const fetchUsers = () => dispatch => {
+
+  fetch('http://localhost:3001/api/v1/users')
+    .then(res =>
+      res.json())
+    .then(users => dispatch({
+      type: FETCH_USERS,
+      payload: users
+    }));
+}

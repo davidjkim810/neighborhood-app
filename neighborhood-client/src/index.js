@@ -4,36 +4,28 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import NeighborhoodsIndex from './components/neighborhoods_index';
 import NeighborhoodsCreate from './components/neighborhoods_create';
 import store from './store';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
-import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import Login from './components/auth/Login'
-
-function onAuthRequired({history}){
-  history.push('/login');
-}
-
+import UsersCreate from './components/users/users_create';
+import UsersIndex from './components/users/users_index';
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Security issuer='https://dev-671514.oktapreview.com/oauth2/default'
-                  client_id='0oagntsfo3xBFh62I0h7'
-                  redirect_uri={window.location.origin + '/implicit/callback'}
-                  onAuthRequired={onAuthRequired} >
       <div>
         <Navbar />
         <div className="container">
-          <SecureRoute path="/neighborhoods" component={NeighborhoodsIndex} />
           <Route path="/" exact={true} component={Home}/>
-          <Route path='/login' render={() => <Login baseUrl='https://dev-671514.oktapreview.com' />} />
-          <Route path='/implicit/callback' component={ImplicitCallback} />
+          <Route path="/users/new" exact={true} component={UsersCreate} />
+          <Route path="/users/:id" component={UsersShow} />
+          <Route path="/users" exact={true} component={UsersIndex} />
         </div>
       </div>
-      </Security>
     </Router>
   </Provider>,
 document.getElementById('root')
